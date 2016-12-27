@@ -32,6 +32,11 @@ var GameState = {
         this.leftArrow.scale.setTo(0.2);
         this.leftArrow.customParams = {direction: -1};
         
+        // input enabled animate animal
+        this.chicken.inputEnabled = true;
+        this.chicken.input.pixelPerfectClick = true;
+        this.chicken.events.onInputDown.add(this.animateAnimal, this);
+        
         // input enabled left
         this.leftArrow.inputEnabled = true;
         this.leftArrow.input.pixelPerfectClick = true;
@@ -47,6 +52,9 @@ var GameState = {
     },
     switchAnimal: function(sprite, event) {
         console.log('move animal');
+    },
+    animateAnimal: function(sprite, event) {
+        console.log('animate animal');
     }
 };
 
